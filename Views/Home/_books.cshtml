@@ -1,0 +1,44 @@
+@*
+ ilk aşamada herbiri için ayrı ayrı yazmıştık ama buna gerek yok bir tanesini şablon olarak kulanırsak
+  diğerleri için de aynı şekilde kullanabiliriz
+
+*@
+@model IEnumerable<Book> 
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class ="card mb-3">
+            <div class ="row no-gutter">
+                <div class ="col-md-3">
+                    <img src = "~/img/@item.ImageUrl" alt="" class ="card-img">
+                </div>
+                <div class="col-md-9">
+                    <div class = "card-body">
+                        <h5 class="card-title">
+                          <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">
+                            @item.Name   @*film isimlerini birer link haline getirme işlemi   /home/details/5*@
+                          </a>  
+                        </h5>
+                          <p class="card-text">
+                            @item.ShortDescription
+                          </p>
+
+                          <p class ="card-text">
+                            <small class="text-muted"> Mart 1999</small>
+                          </p>
+
+                    </div>
+                </div>
+            </div>    
+        </div>
+    }
+
+
+
+
+
+
+
