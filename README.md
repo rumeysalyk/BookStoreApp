@@ -1,2 +1,2 @@
 # BookStoreApp
-A basic website that shows books and content as categories.
+A basic best practice application that shows books and content as categories.
